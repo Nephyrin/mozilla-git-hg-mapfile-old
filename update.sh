@@ -98,7 +98,7 @@ fi
 	export GIT_SSH="$PWD/ssh_github_map_key.sh"
 	cd "moz-git-map"
 	echo ":: Updating mapfile"
-	git commit hg-git-mapfile -m "Sync'd branch $branch with upstream @ $(date)"
+	git commit hg-git-mapfile -m "Sync'd branch $dir with upstream @ $(date)"
 	  # As of git v1.7.5.4, it can take two of these to update everything
 	  # (some refs don't get pushed the first time, no idea)
 	  # (actually this could just be github's weird custom git server having some
