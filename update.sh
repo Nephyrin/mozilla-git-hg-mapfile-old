@@ -78,8 +78,8 @@ cd ..
 
 export GIT_COMMITTER_EMAIL="johns@mozilla.com"
 export GIT_COMMITTER_NAME="John Schoenick"
-export GIT_AUTHOR_EMAIL="noreply@arcus.mv.mozilla.com"
-export GIT_AUTHOR_NAME="Arcus"
+export GIT_AUTHOR_EMAIL="noreply@bangles.mv.mozilla.com"
+export GIT_AUTHOR_NAME="Bangles"
 
 if [ -z "$changes$force" ]; then
     echo ":: No changes, done"
