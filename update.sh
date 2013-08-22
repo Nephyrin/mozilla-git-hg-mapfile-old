@@ -42,10 +42,7 @@ oldrev=$(hg log -r tip --template='{rev}')
 recover() {
     echo "!! Hg pull/update failed, possibly corrupt, running recovery"
     > .hg/bookmarks
-    hg revert -a
     hg strip --no-backup $oldrev:
-    hg up -C -r tip
-    hg purge --all
     die "!! Attempted recovery, bailing"
 }
 
@@ -55,7 +52,6 @@ newrev=$(hg log -r tip --template='{rev}')
 if [ "$oldrev" != "$newrev" ] || [ ! -z "$force" ]; then
     echo ":: Updating $oldrev -> $newrev"
     changes=1
-    hg up -C -r tip || recover
     bookmark="$(cat .hg/git-branch)"
     rm -v .hg/bookmarks
       # Bookmark tip
@@ -70,7 +66,6 @@ if [ "$oldrev" != "$newrev" ] || [ ! -z "$force" ]; then
         fi
     done < <(hg heads --template '{branch} {node}\n')
     hg bookmarks
-    hg purge --all
     hg gexport -v
 fi
 
