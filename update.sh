@@ -66,7 +66,7 @@ if [ "$oldrev" != "$newrev" ] || [ ! -z "$force" ]; then
         fi
     done < <(hg heads --template '{branch} {node}\n')
     hg bookmarks
-    hg gexport -v
+    hg gexport -v || recover
 fi
 
 cd ..
