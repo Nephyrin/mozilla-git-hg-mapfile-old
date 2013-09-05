@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 dir="$1"
 force="$2"
 
@@ -11,7 +13,6 @@ die() {
 [ $# -eq 2 ] || [ $# -eq 1 ] || die "Usage: ./update.sh branch [force]"
 [ $# -ne 2 ] || [ "$2" = "force" ] || die "Second argument must be 'force'"
 
-set -e
 cd "$(dirname "$0")"
 
 hg --version
