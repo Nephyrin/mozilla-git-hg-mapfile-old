@@ -86,8 +86,8 @@ fi
 	echo ":: Updating main repo"
 	export GIT_SSH="$PWD/ssh_github_key.sh"
 	cd "moz-git"
-	#git push github --mirror
-	#git push github --mirror
+	git push github --mirror
+	git push github --mirror
 )
 
 (
@@ -99,6 +99,6 @@ fi
 	  # (some refs don't get pushed the first time, no idea)
 	  # (actually this could just be github's weird custom git server having some
 	  #  delay...)
-	#git push github --mirror
-	#git push github --mirror
+	git push github --mirror
+	git push github --mirror
 )
